@@ -1,0 +1,31 @@
+body{
+    background: dodgerblue;
+}
+.div{
+    justify-content: flex-start;
+}
+.titulo{
+    background-color: red;
+}
+.nombre{
+    border-radius: 5px;
+    padding: 4px;
+}
+.Email{
+    border-radius: 5px;
+    padding: 4px;
+}
+.Edad{
+    border-radius: 5px;
+    padding: 4px;
+}
+.Pais{
+    border-radius: 5px;
+    padding: 4px;
+}
+.agregar{
+    border-radius: 5px;
+    padding: 4px;
+    background: red;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
