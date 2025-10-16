@@ -5,6 +5,8 @@ const inputPais = document.getElementById('Pais');
 const btnAgregar = document.getElementById('btnAgregar');
 const listaTareas = document.getElementById('Lista');
 
+const mensajeError = document.getElementById('mensajeError');
+
 listaTareas.innerHTML = localStorage.getItem('listaTareas') || '';
 
 btnAgregar.addEventListener('click', () => {
@@ -19,14 +21,21 @@ btnAgregar.addEventListener('click', () => {
         const nuevaTarea = document.createElement('li');
         nuevaTarea.textContent = infoCompleta;
         listaTareas.appendChild(nuevaTarea);
-
         inputNombre.value = '';
         inputEmail.value = '';
         inputEdad.value = '';
         inputPais.value = '';
-
         localStorage.setItem('listaTareas', listaTareas.innerHTML);
-    } else {
-        respuesta.innerHTML('Por favor, completa todos los campos.');
+        mensajeError.textContent = '';
+    } else if(textoNombre == '') {
+        mensajeError.textContent = 'Completa el campo nombre';
+    } else if(textoEmail == ''){
+        mensajeError.textContent = 'Completa el campo email';
+    } else if(textoEdad == ''){
+        mensajeError.textContent = 'Completa el campo edad';
+    } else if(textoPais == ''){
+        mensajeError.textContent = 'Completa el campo pais';
+    }else{
+        mensajeError.textContent = 'Completa los campos.';
     }
 });
